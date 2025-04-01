@@ -9,20 +9,14 @@ import SwiftUI
 import MapKit
 
 struct ListingDetailView: View {
-    
-    var images = [
-        "listing-1",
-        "listing-2",
-        "listing-3",
-        "listing-4"
-    ]
+    let listing: Listing
     
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ScrollView {
             ZStack(alignment: .topLeading) {
-                ListingImageCarouselView()
+                ListingImageCarouselView(listing: listing)
                     .frame(height: 320)
                 
                 Button {
@@ -226,5 +220,5 @@ struct ListingDetailView: View {
 }
 
 #Preview {
-    ListingDetailView()
+    ListingDetailView(listing: DeveloperPreview.shared.listing[0])
 }
