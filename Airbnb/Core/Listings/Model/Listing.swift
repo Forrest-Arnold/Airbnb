@@ -42,6 +42,13 @@ enum ListingFeatures: Int, Codable, Identifiable, Hashable {
         }
     }
     
+    var subtitle: String {
+        switch self {
+        case .selfCheckIn: return "Check yourself in with the keypad"
+        case .superHost: return "Superhosts are experienced, highly rated hosts who are commited to providing great stays for guests."
+        }
+    }
+    
     var imageName: String {
         switch self {
         case .selfCheckIn: return "door.left.hand.open"
